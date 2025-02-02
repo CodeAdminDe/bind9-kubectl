@@ -1,6 +1,6 @@
 FROM internetsystemsconsortium/bind9:9.21
 
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl coreutils
 
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
