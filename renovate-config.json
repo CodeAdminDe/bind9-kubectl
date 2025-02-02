@@ -1,0 +1,12 @@
+{
+  "branchPrefix": "renovate/",
+  "username": "renovate-release",
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "onboarding": true,
+  "requireConfig": "optional",
+  "platform": "github",
+  "forkProcessing": "enabled",
+  "repositories": [
+    "codeadminde/bind9-kubectl"
+  ]
+}
