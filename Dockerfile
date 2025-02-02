@@ -1,10 +1,12 @@
-FROM bitnami/kubectl:1.32.1 AS builder
-
-# Stage 2: Final Stage
 FROM internetsystemsconsortium/bind9:9.21
 
-# Kopiere kubectl aus dem Builder-Image
-COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
+RUN apk add --no-cache curl
 
-# Setze die Berechtigungen, falls erforderlich
-RUN chmod +x /usr/local/bin/kubectl
+RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+
+RUN echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check - && \
+    chmod +x ./kubectl && \
+    mv ./kubectl /usr/local/bin/kubectl
+
+RUN rm kubectl.sha256
