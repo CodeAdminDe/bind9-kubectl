@@ -4,7 +4,6 @@ RUN apk add --no-cache curl coreutils
 
 # renovate: datasource=custom.k8s packageName=kubectl
 ENV KUBECTL_VERSION=v1.33.2
-$(curl -L -s https://dl.k8s.io/release/stable.txt)
 
 RUN curl -LO "https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl" && \
     curl -LO "https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl.sha256"
