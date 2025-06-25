@@ -23,5 +23,24 @@
     "automerge": true
   },
   "automergeType": "pr",
-  "ignoreTests": true
+  "ignoreTests": true,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update _VERSION variables in Dockerfiles",
+      "managerFilePatterns": [
+        "/(^|/|\\.)Dockerfile$/",
+        "/(^|/)Dockerfile\\.[^/]*$/"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?\\s(?:ENV|ARG) .+?_VERSION=(?<currentValue>.+?)\\s"
+      ]
+    }
+  ],
+  "customDatasources": {
+    "k8s": {
+      "defaultRegistryUrlTemplate": "https://cdn.dl.k8s.io/release/stable.txt",
+      "format": "plain"
+    }
+  }
 }
