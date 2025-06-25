@@ -24,6 +24,7 @@
   },
   "automergeType": "pr",
   "ignoreTests": true,
+  "enabledManagers": ["dockerfile", "github-actions", "custom.regex"],
   "customManagers": [
     {
       "customType": "regex",
