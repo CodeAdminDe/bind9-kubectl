@@ -3,7 +3,7 @@ FROM internetsystemsconsortium/bind9:9.21
 RUN apk add --no-cache curl coreutils
 
 # renovate: datasource=custom.k8s depName=kubectl
-ENV KUBECTL_VERSION=v1.34.0
+ENV KUBECTL_VERSION=v1.34.1
 
 RUN curl -LO "https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl" && \
     curl -LO "https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl.sha256"
