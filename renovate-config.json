@@ -24,6 +24,17 @@
   },
   "automergeType": "pr",
   "ignoreTests": true,
+  "packageRules": [
+        {
+            "matchManagers": [
+                "dockerfile"
+            ],
+            "matchDatasources": [
+                "docker"
+            ],
+            "pinDigests": true
+        }
+    ],
   "enabledManagers": [
     "dockerfile",
     "github-actions",
