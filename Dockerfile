@@ -1,4 +1,4 @@
-FROM internetsystemsconsortium/bind9:9.21@sha256:a9ab53184e456a0227daefade02fc9fca811908a851310a570d49b4e726f7765
+FROM internetsystemsconsortium/bind9:9.21@sha256:59a2deb14c46459537cd702d96186631b183e455b8fa9589c3df78108481144a
 
 RUN apk add --no-cache curl coreutils
 
